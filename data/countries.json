@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "updatedAt": "2026-08-25",
+    "note": "各国铁路速度等级定义与电气化概况。数据为人工整理,主要依据各国官方文件、UIC 标准与公开资料,来源见各条目 sources。速度阈值为运营/设计速度(km/h),非精确法律条文,仅供可视化分级参考。"
+  },
+  "countries": [
+    {
+      "code": "GLOBAL",
+      "name": "全球默认",
+      "nameEn": "Global (UIC default)",
+      "speedTiers": [
+        { "id": "hsr", "label": "高速铁路", "labelEn": "High-speed rail", "minSpeed": 250, "note": "UIC 标准:新建线 250km/h 及以上" },
+        { "id": "upgraded", "label": "提速改造线", "labelEn": "Upgraded line", "minSpeed": 200, "note": "UIC 标准:既有线改造后 200km/h 及以上" },
+        { "id": "fast", "label": "快速铁路", "labelEn": "Fast rail", "minSpeed": 160, "note": "快速普速区间" },
+        { "id": "conventional", "label": "普速铁路", "labelEn": "Conventional", "minSpeed": 0 }
+      ],
+      "highSpeedDefinition": "UIC:新建线 ≥250km/h、改造线 ≥200km/h 视为高速铁路",
+      "electrificationNote": "全球电气化铁路以 25kV 50/60Hz 交流为主流,另有 15kV 16.7Hz(德/奥/瑞)、1.5kV/3kV 直流(荷/法南/意/西/比/波等)等制式",
+      "dataQuality": "medium",
+      "dataQualityNote": "UIC 统计与各国官方数据混合,覆盖率不均",
+      "sources": ["https://uic.org/passenger/highspeed/", "https://www.railway-technology.com/"]
+    },
+    {
+      "code": "CN",
+      "name": "中国",
+      "nameEn": "China",
+      "speedTiers": [
+        { "id": "hsr", "label": "高速铁路(350)", "labelEn": "HSR 350", "minSpeed": 300, "note": "G 字头列车,设计时速 350km/h 新线" },
+        { "id": "hsr250", "label": "高速铁路(250)", "labelEn": "HSR 250", "minSpeed": 250, "note": "D 字头动车组,设计时速 250km/h 新线" },
+        { "id": "upgraded", "label": "既有线提速", "labelEn": "Upgraded line", "minSpeed": 200, "note": "既有线提速改造后开行 D 字头动车,最高 200km/h" },
+        { "id": "fast", "label": "快速普速", "labelEn": "Fast conventional", "minSpeed": 160, "note": "大提速后普速客车最高 160km/h(如京沪既有线)" },
+        { "id": "conventional", "label": "普速铁路", "labelEn": "Conventional", "minSpeed": 0 }
+      ],
+      "highSpeedDefinition": "《高速铁路设计规范》:新建线设计时速 250km/h 及以上为高速铁路;既有线提速开行动车组最高 200km/h(用户场景:普速经大提速亦可达 160km/h)",
+      "electrificationNote": "国铁干线普遍 25kV 50Hz 交流接触网;西部部分支线及专用线仍为内燃牵引",
+      "dataQuality": "high",
+      "dataQualityNote": "官方信息充分(国家铁路局、12306 与维基数据详实)",
+      "sources": ["https://zh.wikipedia.org/wiki/中国高速铁路", "https://www.nra.gov.cn/"]
+    },
+    {
+      "code": "JP",
+      "name": "日本",
+      "nameEn": "Japan",
+      "speedTiers": [
+        { "id": "shinkansen", "label": "新干线", "labelEn": "Shinkansen", "minSpeed": 200, "note": "新干线运营速度 200-320km/h" },
+        { "id": "premium", "label": "在来线优等", "labelEn": "Conventional express", "minSpeed": 130, "note": "在来线特急/快速,最高 160km/h(如东北本线)" },
+        { "id": "conventional", "label": "在来线普通", "labelEn": "Conventional", "minSpeed": 0 }
+      ],
+      "highSpeedDefinition": "新干线为标准制式高速铁路(运营速度 ≥200km/h);在来线最高 160km/h,不作高速定义",
+      "electrificationNote": "新干线 25kV 50Hz(东北)/60Hz(其余);在来线以 1.5kV 直流为主,东北・北陆地区 20kV 交流",
+      "dataQuality": "high",
+      "dataQualityNote": "铁道迷社区极丰富(废线资料、全線走破记录、同人地图),OSM 铁路数据完善度高",
+      "sources": ["https://ja.wikipedia.org/wiki/新幹線", "https://www.mlit.go.jp/tetudo/"]
+    },
+    {
+      "code": "DE",
+      "name": "德国",
+      "nameEn": "Germany",
+      "speedTiers": [
+        { "id": "hsr", "label": "高速新线", "labelEn": "NBS", "minSpeed": 250, "note": "新建高速线(Neubaustrecke),ICE 运营 250-300km/h" },
+        { "id": "upgraded", "label": "改造提速线", "labelEn": "ABS", "minSpeed": 200, "note": "既有线改造(Ausbaustrecke),ICE 运营 200-230km/h" },
+        { "id": "fast", "label": "快速干线", "labelEn": "Fast main line", "minSpeed": 160, "note": "IC/RB 常规最高 160km/h" },
+        { "id": "conventional", "label": "普速铁路", "labelEn": "Conventional", "minSpeed": 0 }
+      ],
+      "highSpeedDefinition": "DB Netz 定义:新线 ≥250km/h、改造线 ≥200km/h 为高速铁路",
+      "electrificationNote": "干线几乎全电气化,标准制式 15kV 16.7Hz 交流",
+      "dataQuality": "high",
+      "dataQualityNote": "DB 官方公布线网数据与社区维护资料充足",
+      "sources": ["https://www.dbnetze.com/", "https://de.wikipedia.org/wiki/Schnellfahrstrecke"]
+    },
+    {
+      "code": "FR",
+      "name": "法国",
+      "nameEn": "France",
+      "speedTiers": [
+        { "id": "hsr", "label": "高速铁路(LGV)", "labelEn": "LGV", "minSpeed": 270, "note": "LGV 新线设计 320km/h,运营 300km/h;开通初期标准 270km/h" },
+        { "id": "upgraded", "label": "改造提速线", "labelEn": "Upgraded line", "minSpeed": 200, "note": "既有线改造 200-220km/h" },
+        { "id": "fast", "label": "快速干线", "labelEn": "Fast main line", "minSpeed": 160 },
+        { "id": "conventional", "label": "普速铁路", "labelEn": "Conventional", "minSpeed": 0 }
+      ],
+      "highSpeedDefinition": "UIC 定义(法国为 UIC 创始方):新建 LGV ≥270km/h",
+      "electrificationNote": "LGV 与北方干线 25kV 50Hz;南部传统线 1.5kV 直流",
+      "dataQuality": "high",
+      "dataQualityNote": "SNCF Réseau 官方资料与维基条目充分",
+      "sources": ["https://www.sncf-reseau.com/", "https://fr.wikipedia.org/wiki/Ligne_à_grande_vitesse"]
+    },
+    {
+      "code": "IN",
+      "name": "印度",
+      "nameEn": "India",
+      "speedTiers": [
+        { "id": "semi-hsr", "label": "准高速/在建高速", "labelEn": "Semi-HSR / under construction", "minSpeed": 180, "note": "孟买-艾哈迈达巴德高速走廊在建(设计 320km/h)" },
+        { "id": "fast", "label": "提速干线", "labelEn": "Upgraded main line", "minSpeed": 160, "note": "大提速后普速客车最高 160km/h(德里-豪拉、德里-孟买等)" },
+        { "id": "conventional", "label": "普速铁路", "labelEn": "Conventional", "minSpeed": 0, "note": "普遍运营速度 100-130km/h" }
+      ],
+      "highSpeedDefinition": "印度截至 2026 年无投入运营的高速铁路;160km/h 已是提速改造后的最高普速客车速度(用户场景:160km/h 在该国即属「高速」级别)",
+      "electrificationNote": "25kV 50Hz 交流;印度铁路 2024 年宣布主要干线完成电气化,目标 2030 年全线电气化",
+      "dataQuality": "medium",
+      "dataQualityNote": "官方信息尚可,但线路级速度数据(OSM maxspeed 标注)覆盖率低,需对照时刻表推算",
+      "sources": ["https://indianrailways.gov.in/", "https://en.wikipedia.org/wiki/High-speed_rail_in_India"]
+    },
+    {
+      "code": "US",
+      "name": "美国",
+      "nameEn": "United States",
+      "speedTiers": [
+        { "id": "acela", "label": "准高速(Acela)", "labelEn": "Acela / high-speed corridor", "minSpeed": 200, "note": "东北走廊 Acela 运营 240km/h(150mph),提速段最高 200km/h 以上" },
+        { "id": "fast", "label": "快速走廊", "labelEn": "Fast corridor", "minSpeed": 160, "note": "Amtrak 提速段 110-160km/h" },
+        { "id": "intercity", "label": "常规城际", "labelEn": "Intercity", "minSpeed": 110, "note": "Amtrak 常规线路 79-110mph(127-177km/h)" },
+        { "id": "conventional", "label": "普速/货运", "labelEn": "Conventional", "minSpeed": 0, "note": "货运线路为主,客运限速普遍低于 79mph" }
+      ],
+      "highSpeedDefinition": "美国无全国统一高速定义;FRA 将 110mph 及以上轨道列为高速轨道,Acela 为唯一 150mph 商业运营线路",
+      "electrificationNote": "仅东北走廊电气化(12kV 25Hz 与 25kV 60Hz 分段);全国其余线路以柴油内燃为主",
+      "dataQuality": "medium",
+      "dataQualityNote": "FRA/Amtrak 官方数据可用,货运线路大量为私有数据,OSM 标注不全",
+      "sources": ["https://railroads.dot.gov/", "https://www.amtrak.com/"]
+    },
+    {
+      "code": "ET",
+      "name": "埃塞俄比亚",
+      "nameEn": "Ethiopia",
+      "speedTiers": [
+        { "id": "hsr", "label": "高速/骨干线", "labelEn": "HSR / backbone", "minSpeed": 120, "note": "亚吉铁路(亚的斯亚贝巴-吉布提)设计时速 120km/h,为该国最快线路" },
+        { "id": "conventional", "label": "普速/窄轨", "labelEn": "Conventional", "minSpeed": 0, "note": "既有窄轨线(已废弃/改造中)" }
+      ],
+      "highSpeedDefinition": "该国最高运营速度 120km/h;若未来出现 160km/h 线路,在该国语境即属高速(基础设施后发地区,速度标杆低于发达国家)",
+      "electrificationNote": "亚吉铁路为电气化铁路(25kV 交流);其余线路内燃或废弃",
+      "dataQuality": "low",
+      "dataQualityNote": "公开资料稀少,废线与历史线路信息需从多方网络搜寻或地图影像识别补全",
+      "sources": ["https://en.wikipedia.org/wiki/Addis_Ababa–Djibouti_Railway", "https://www.railwaygazette.com/"]
+    }
+  ]
+}

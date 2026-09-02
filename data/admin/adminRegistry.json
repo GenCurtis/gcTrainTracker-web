@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "supportedCountries": {
+    "JP": {
+      "code": "JP",
+      "name": "Japan",
+      "nameZh": "日本",
+      "levels": {
+        "1": {
+          "id": "1",
+          "levelName": "ADM1",
+          "label": "都道府県",
+          "file": "1.geojson",
+          "minzoom": 0,
+          "maxzoom": 22
+        },
+        "3": {
+          "id": "3",
+          "levelName": "ADM3",
+          "label": "市区町村",
+          "file": "3.geojson",
+          "minzoom": 8,
+          "maxzoom": 22
+        }
+      },
+      "colorKey": {
+        "province": "province",
+        "county": "county"
+      },
+      "features": {
+        "hasAdminFills": true,
+        "hasColorMap": true,
+        "hasAdjacency": true,
+        "hasStations": true,
+        "hasFacilities": true
+      }
+    }
+  }
+}
